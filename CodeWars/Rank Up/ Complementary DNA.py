@@ -6,3 +6,10 @@ def DNA_strand(dna):
     for elem in dna: # character iterator
         temp = temp + compliment[elem]
     return temp
+
+def DNA_strand(dna):
+    return dna.translate(str.maketrans("ATCG","TAGC"))
+
+pairs = {'A':'T','T':'A','C':'G','G':'C'}
+def DNA_strand(dna):
+    return ''.join([pairs[x] for x in dna])
