@@ -16,7 +16,8 @@ def digital_root(n):
 def digital_root(n):
     return 1 + ((int(n) - 1) % 9) if n>0 else 0
 
+import functools
 def digital_root(n):
     while (n > 9):
-        n = reduce(lambda a, b: int(a) + int(b), list(str(n)))
+        n = functools.reduce(lambda a, b: int(a) + int(b), list(str(n)))
     return n
